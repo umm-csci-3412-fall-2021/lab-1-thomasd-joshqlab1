@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Create a temp directory 'TMPDIR'
-TMPDIR=$(mktemp -d) || exit 1
+TMPDIR=$(mktemp -d) || exit
 
 #Remember where we started
 here=$(pwd)
@@ -36,4 +36,4 @@ bin/assemble_report.sh "$TMPDIR"
 mv "$TMPDIR"/failed_login_summary.html "$here"
 
 #Remove the temp directory
-rm "$TMPDIR"
+rm -r "$TMPDIR"
